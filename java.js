@@ -71,8 +71,17 @@ function submitHandler(event) {
     event.preventDefault()
     
    const RESULTS = myMovies.filter(function(element){
-    return element.title.includes(event.target.search.value)
+    return searchTitle(event.target.search.value, element.title)
+        || element.published == event.target.search.value
    })
 
    console.log(RESULTS)
 }
+
+function searchTitle(keyword, title) {
+  return title
+    .toLowerCase()
+    .includes(
+    keyword.toLowerCase()
+     )
+} 
