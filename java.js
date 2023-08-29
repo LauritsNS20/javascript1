@@ -5,7 +5,7 @@ var myMovies = [
         title: "Forest Gump",
         punlished: 1994,
         genres: ["drama"],
-        actors: ["Tom Hanks"],
+        actors: ["Tom Hanks", "Tom Hanks"],
     },
     {
         title: "John Wick",
@@ -62,3 +62,17 @@ var myMovies = [
         actors: ["Arnold Schwarzenegger", "Kevin Peter Hall"],
     },
 ]
+
+const FORM = document.querySelector(".searchForm")
+
+FORM.addEventListener("submit", submitHandler)
+
+function submitHandler(event) {
+    event.preventDefault()
+    
+   const RESULTS = myMovies.filter(function(element){
+    return element.title.includes(event.target.search.value)
+   })
+
+   console.log(RESULTS)
+}
