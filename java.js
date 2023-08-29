@@ -72,7 +72,9 @@ function submitHandler(event) {
     
    const RESULTS = myMovies.filter(function(element){
     return searchTitle(event.target.search.value, element.title)
-        || element.published == event.target.search.value
+      || compare(element.punlished, event.target.search.value)
+      || compare(element.genres, event.target.search.value)
+      || compare(element.actors, event.target.search.value)
    })
 
    console.log(RESULTS)
@@ -85,3 +87,22 @@ function searchTitle(keyword, title) {
     keyword.toLowerCase()
      )
 } 
+const compare = (a, b) => a == b
+
+function searchGenres(keyword, genres) {
+    return genres
+    .toLowerCase()
+    .includes(
+     keyword.toLowerCase()
+    )
+}
+const find = (a, b) => a == b
+
+function searchActors(keyword, actors) {
+    return actors
+    .toLowerCase()
+    .includes(
+    keyword.toLowerCase()
+    )
+}
+const lookfor = (a, b) => a == b
