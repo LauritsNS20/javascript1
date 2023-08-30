@@ -78,6 +78,18 @@ function submitHandler(event) {
    })
 
    console.log(RESULTS)
+   const UL = document.getElementsByClassName("movieResults")[0]
+
+   RESULTS.forEach(function(result) {
+        const LI = document.createElement("li")
+        LI.innerHTML = `
+            <h2 class="movie__Title">${result.title}</h2>
+            <span>${result.published}</span>
+            <span>${result.genres}</span>
+            <p>${result.actors.join(" ")}</p>
+        `
+        UL.append(LI)
+   })
 }
 
 function searchTitle(keyword, title) {
