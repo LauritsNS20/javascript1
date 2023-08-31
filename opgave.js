@@ -21,26 +21,27 @@ const PEOPLE = [
     },
 ]
  
-const text = document.querySelector(".text")
-const text2 = document.querySelector(".text2")
-const text3 = document.querySelector(".text3")
-const text4 = document.querySelector(".text4")
-
-text.innerHTML = PEOPLE[0].name 
-text2.innerHTML = PEOPLE[PEOPLE.length - 1].name
-text3.innerHTML = PEOPLE[1].name
-text4.innerHTML = PEOPLE[2].name 
+PEOPLE.forEach(function(result){
+    document.body.innerHTML += `
+    <h2>${result.name} er ${result.age} 
+    år og han  er min  ${result.who}</h2>`
+})
+  
 
 
 
 
 
 
+//const text = document.querySelector(".text")
+//const text2 = document.querySelector(".text2")
+//const text3 = document.querySelector(".text3")
+//const text4 = document.querySelector(".text4")
 
-
-//PEOPLE.forEach(function(result)) {
- // document.innerHTML += `<h2>${result.name}</h2>`
-//}
+//text.innerHTML = PEOPLE[0].name 
+//text2.innerHTML = PEOPLE[PEOPLE.length - 1].name
+//text3.innerHTML = PEOPLE[1].name
+//text4.innerHTML = PEOPLE[2].name 
 
 //document.body.prepend(PEOPLE[0].name
    // ," ", 
