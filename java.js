@@ -85,9 +85,17 @@ function submitHandler(event) {
         LI.innerHTML = `
             <h2 class="movie__Title">${result.title}</h2>
             <span>${result.published}</span>
-            <span>${result.genres}</span>
-            <p>${result.actors.join(" ")}</p>
+            <h3>Genrer</h3>
+            <ul class="movieGenres"></ul>
+            <h3>skuespillere</h3>
+            <ul class="movieActors"></ul>
         `
+        const GENRES = LI.querySelector(".movieGenres")
+        const ACTORS = LI.querySelector(".movieActors")
+
+        result.genres.forEach(genre => GENRES.innerHTML = `<li>${genre}</li>`)
+        result.actors.forEach(actor => ACTORS.innerHTML = `<li>${actor}</li>`)
+
         UL.append(LI)
    })
 }
