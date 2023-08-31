@@ -20,11 +20,39 @@ const PEOPLE = [
         who: ["friend"],
     },
 ]
-   
-PEOPLE.forEach(function(element){
-    console.log(element)   
-}) 
+ 
+const text = document.querySelector(".text")
+const text2 = document.querySelector(".text2")
+const text3 = document.querySelector(".text3")
+const text4 = document.querySelector(".text4")
+
+text.innerHTML = PEOPLE[0].name 
+text2.innerHTML = PEOPLE[PEOPLE.length - 1].name
+text3.innerHTML = PEOPLE[1].name
+text4.innerHTML = PEOPLE[2].name 
+
+
+
+
+
+
+
+
+//PEOPLE.forEach(function(result)) {
+ // document.innerHTML += `<h2>${result.name}</h2>`
+//}
+
+//document.body.prepend(PEOPLE[0].name
+   // ," ", 
+   // PEOPLE[PEOPLE.length - 1].name
+   // )
+
+
+//PEOPLE.forEach(function(element){
+   // console.log(element.name)   
+//}) 
   
+// conlose.log element.name or .age
 
  //PEOPLE.forEach(element => console.log(element))
 
